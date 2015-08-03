@@ -1,5 +1,8 @@
 # pairing-matrix
 
+Waffle Board: https://waffle.io/jackhalltipping/pairing-matrix
+
+
 #User-stories:
 As a maker
 I want to be paired with someone
@@ -21,20 +24,16 @@ As an unfriendly maker
 I want to have a blacklist of students I will never be paired with  
 So that I never have to listen to them speak  
 
-
-Waffle Board: https://waffle.io/jackhalltipping/pairing-matrix
-
-
 # Technologies used:
-<h3> Backend: </h3>
-Ruby (Rails) <br>
+### Backend:
+Ruby (Rails)
 
-<h3> Frontend: </h3>
-Angular <br>
-HTML 5 <br>
-Bootstrap <br>
-CSS 3 <br>
+### Frontend:
+Angular
+HTML 5
+Bootstrap
+CSS 3
 
-<h3> Testing: </h3>
-Rspec <br>
-Protractor <br>
+### Testing:
+Rspec
+Protractor
