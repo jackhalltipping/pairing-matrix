@@ -12,6 +12,6 @@ HTML 5 <br>
 Bootstrap <br>
 CSS 3 <br>
 
-<h3> Testing: </h3> <br>
+<h3> Testing: </h3>
 Rspec <br>
 Protractor <br>
