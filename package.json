@@ -1,0 +1,25 @@
+{
+  "name": "pairing-matrix",
+  "version": "1.0.0",
+  "description": "Waffle Board: https://waffle.io/jackhalltipping/pairing-matrix",
+  "main": "index.js",
+  "dependencies": {
+    "protractor": "^2.1.0"
+  },
+  "devDependencies": {
+    "bower": "^1.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackhalltipping/pairing-matrix.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackhalltipping/pairing-matrix/issues"
+  },
+  "homepage": "https://github.com/jackhalltipping/pairing-matrix#readme"
+}

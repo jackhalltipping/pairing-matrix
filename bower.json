@@ -1,0 +1,23 @@
+{
+  "name": "pairing-matrix",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jackhalltipping/pairing-matrix",
+  "authors": [
+    "Jack Hall-Tipping <jack.halltipping@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.3",
+    "angular-resource": "~1.4.3"
+  }
+}
