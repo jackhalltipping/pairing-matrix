@@ -1,1 +1,7 @@
   [1m[36m (354.5ms)[0m  [1mCREATE DATABASE "pairing-matrix_test" ENCODING = 'unicode'[0m
+Started GET "/" for ::1 at 2015-08-03 17:25:26 +0100
+Processing by PairsController#index as HTML
+  Rendered pairs/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 189ms (Views: 182.0ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for ::1 at 2015-08-03 17:25:26 +0100
+Started GET "/assets/application.js" for ::1 at 2015-08-03 17:25:26 +0100
