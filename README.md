@@ -2,6 +2,11 @@
 
 Waffle Board: https://waffle.io/jackhalltipping/pairing-matrix
 
+##Plan:
+* 9:30 and 1:30 standups
+* Alternating Frontend/Backend pairs, alternating for each ticket
+* MVP
+
 
 #User-stories:
 ```
