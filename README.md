@@ -4,6 +4,7 @@ Waffle Board: https://waffle.io/jackhalltipping/pairing-matrix
 
 
 #User-stories:
+```
 As a maker
 I want to be paired with someone
 So that I can learn faster
@@ -23,6 +24,7 @@ So that I don’t have to ask them
 As an unfriendly maker  
 I want to have a blacklist of students I will never be paired with  
 So that I never have to listen to them speak  
+```
 
 # Technologies used:
 ### Backend:
