@@ -1,4 +1,4 @@
 exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['pairingMatrixFeature.js']
+  specs: ['pairingMatrixFeature.js'],
 };
