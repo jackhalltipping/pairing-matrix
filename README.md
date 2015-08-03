@@ -28,14 +28,14 @@ So that I never have to listen to them speak
 
 # Technologies used:
 ### Backend:
-Ruby (Rails)
+* Ruby (Rails)
 
 ### Frontend:
-Angular
-HTML 5
-Bootstrap
-CSS 3
+* Angular
+* HTML 5
+* Bootstrap
+* CSS 3
 
 ### Testing:
-Rspec
-Protractor
+* Rspec
+* Protractor
