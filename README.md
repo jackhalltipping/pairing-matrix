@@ -2,6 +2,10 @@
 
 Waffle Board: https://waffle.io/jackhalltipping/pairing-matrix
 
+# Higgs bosons
+* In order to push to heroku, I had to run `rake assets:precompile` from the terminal. That let the rails pipeline know about angular and some other dependencies. The specific error that heroku threw when I tried to push the first time was `deploying to heroku asset pipeline Sprockets::fileNotFound`. Googled that and found this page `http://stackoverflow.com/questions/13077564/deploying-to-heroku-asset-pipeline-sprocketsfilenotfound`. `rake assetes:precompile` added some files to `public/assets`.
+
+
 ##Plan:
 * 9:30 and 1:30 standups
 * Alternating Frontend/Backend pairs, alternating for each ticket
