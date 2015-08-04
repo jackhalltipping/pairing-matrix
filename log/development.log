@@ -262,3 +262,118 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+
+
+Started GET "/pairs" for ::1 at 2015-08-04 14:34:39 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PairsController#index as HTML
+  Rendered pairs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 409ms (Views: 382.5ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/assets/pairs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-04 14:34:40 +0100
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for ::1 at 2015-08-04 14:34:40 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-04 14:34:40 +0100
+
+
+Started GET "/assets/angular/angular.self-5918d434c9cc209ba9ff042e92494418b0d4189738c99bedd51c5bbdefe0f11c.js?body=1" for ::1 at 2015-08-04 14:34:40 +0100
+
+
+Started GET "/assets/jquery/dist/jquery.self-a4777c1acac0a74340755725342901a54ed000955bf6f5320491b8b2514c86ec.js?body=1" for ::1 at 2015-08-04 14:34:40 +0100
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-08-04 14:34:40 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-04 14:34:40 +0100
+
+
+Started GET "/assets/pairs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-04 14:34:40 +0100
+
+
+Started GET "/assets/app.self-681e9f311dc40092d0499bafe3a57504c0dfde03b00fe3a278b16993409120a7.js?body=1" for ::1 at 2015-08-04 14:34:40 +0100
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-04 14:34:40 +0100
+
+
+Started GET "/" for ::1 at 2015-08-04 14:34:44 +0100
+Processing by PairsController#index as HTML
+  Rendered pairs/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 52ms (Views: 51.4ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2015-08-04 15:20:41 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PairsController#index as HTML
+  Rendered pairs/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 740ms (Views: 720.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/pairs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-04 15:20:42 +0100
+
+
+Started GET "/assets/index.self-f4c6b4170da1b5b5015f77c25ef49ef5f81cad703905dd89511965934115c2b1.css?body=1" for ::1 at 2015-08-04 15:20:42 +0100
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-08-04 15:20:42 +0100
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for ::1 at 2015-08-04 15:20:42 +0100
+
+
+Started GET "/assets/jquery/dist/jquery.self-a4777c1acac0a74340755725342901a54ed000955bf6f5320491b8b2514c86ec.js?body=1" for ::1 at 2015-08-04 15:20:42 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-04 15:20:42 +0100
+
+
+Started GET "/assets/angular/angular.self-5918d434c9cc209ba9ff042e92494418b0d4189738c99bedd51c5bbdefe0f11c.js?body=1" for ::1 at 2015-08-04 15:20:42 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-04 15:20:42 +0100
+
+
+Started GET "/assets/app.self-681e9f311dc40092d0499bafe3a57504c0dfde03b00fe3a278b16993409120a7.js?body=1" for ::1 at 2015-08-04 15:20:42 +0100
+
+
+Started GET "/assets/pairs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-04 15:20:42 +0100
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-04 15:20:42 +0100
+
+
+Started GET "/pairs" for ::1 at 2015-08-04 15:21:00 +0100
+Processing by PairsController#index as HTML
+  Rendered pairs/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-04 15:25:58 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eEU1mjgrceUIceGwRy/A1KSKy8MjUJRcQZFZ7t+q8a3j7+KUMyTIUdc8osOZlvS6Sn4enZi/hcYA5HNOj8QYLQ==", "user"=>{"username"=>"christian", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eEU1mjgrceUIceGwRy/A1KSKy8MjUJRcQZFZ7t+q8a3j7+KUMyTIUdc8osOZlvS6Sn4enZi/hcYA5HNOj8QYLQ==", "user"=>{"username"=>"christian", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Unpermitted parameter: username
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 154ms (Views: 84.1ms | ActiveRecord: 0.0ms)
