@@ -22,5 +22,14 @@
 .field.user-login {
   padding-top: 1em;
   width: 100%;
-  
+
+}
+
+.notice {
+  padding-top: 5em;
+}
+
+.btn.my-cohort {
+  float: right;
+
 }
