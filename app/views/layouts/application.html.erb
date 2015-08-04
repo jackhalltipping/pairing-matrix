@@ -5,27 +5,45 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </head>
 <body>
 
-  <% if user_signed_in? %>
-    <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href='/'>
+          <%= image_tag("pairing_matrix_logo.gif", size: "30") %>
+        </a>
+        <% if user_signed_in? %>
 
-      <div class="field">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true %>
+          <%= current_user.username %>
 
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "off" %>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, :class => 'btn btn-primary btn-sm' %>
 
-        <%= f.submit "Log in" %>
-      </div>
+          <!-- Need to add path for cohort -->
+          <%= button_to "My Cohort", pairs_path, :class => 'btn btn-primary my-cohort btn-sm' %>
 
-    <% end %>
-  <% end %>
+        <% else %>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+            <div class="field user-login">
+              <%= f.label :email %>
+              <%= f.email_field :email, autofocus: true %>
+
+              <%= f.label :password %>
+              <%= f.password_field :password, autocomplete: "off" %>
+
+              <%= f.submit "Log in", :class => 'btn btn-primary btn-sm' %>
+            </div>
+
+          <% end %>
+        <% end %>
+
+
+  </div>
+</nav>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
