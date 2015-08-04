@@ -9,18 +9,22 @@
 </head>
 <body>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <% if user_signed_in? %>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <div class="field">
-      <%= f.label :username %>
-      <%= f.text_field :username, autofocus: true %>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off" %>
 
-      <%= f.submit "Log in" %>
-    </div>
+        <%= f.submit "Log in" %>
+      </div>
 
+    <% end %>
   <% end %>
 
   <p class="notice"><%= notice %></p>
