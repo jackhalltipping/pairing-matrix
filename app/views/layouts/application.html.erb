@@ -5,23 +5,30 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </head>
 <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href='/'>
+          <%= image_tag("pairing_matrix_logo.gif", size: "30") %>
+        </a>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field user-login">
+              <%= f.label :username %>
+              <%= f.text_field :username, autofocus: true %>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= f.label :password %>
+              <%= f.password_field :password, autocomplete: "off" %>
 
-    <div class="field">
-      <%= f.label :username %>
-      <%= f.text_field :username, autofocus: true %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "off" %>
-
-      <%= f.submit "Log in" %>
+              <%= f.submit "Log in" %>
+            </div>
+        <% end %>
     </div>
-
-  <% end %>
+  </div>
+</nav>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
