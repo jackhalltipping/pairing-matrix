@@ -23,7 +23,7 @@
           <%= button_to "Sign out", destroy_user_session_path, method: :delete, :class => 'btn btn-primary btn-sm' %>
 
           <!-- Need to add path for cohort -->
-          <%= button_to "My Cohort", pairs_path, :class => 'btn btn-primary my-cohort btn-sm' %>
+          <%= button_to "My Cohort", user_cohorts_path, method: :get, :class => 'btn btn-primary my-cohort btn-sm' %>
 
         <% else %>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

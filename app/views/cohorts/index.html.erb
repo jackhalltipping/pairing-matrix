@@ -1,0 +1,6 @@
+<h1> Here is everyone is your cohort</h1>
+<ul>
+  <% @user_cohort.each do |user| %>
+    <li><%= user.username %></li>
+  <% end %>
+</ul>
