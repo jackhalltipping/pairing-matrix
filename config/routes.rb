@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get '/user/cohorts' => 'cohorts#index'
+
   root to: 'pairs#index'
 
   resources :pairs
