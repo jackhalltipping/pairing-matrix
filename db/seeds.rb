@@ -77,6 +77,8 @@ start = june.start_date
 round_robin = pair_up(all_ids)
 
 round_robin.each do |day|
+  start += 2 if start.saturday?
+  start += 1 if start.sunday?
   day.each do |pair|
     Pairing.create({day: start, user_id: pair[0], pair_id: pair[1]})
     Pairing.create({day: start, user_id: pair[1], pair_id: pair[0]})
