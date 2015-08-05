@@ -2,12 +2,13 @@ require 'rails_helper'
 
 feature "User" do
 
-  let!(:user) { FactoryGirl.create(:user)}
+  let!(:user) { create(:user)}
 
   context "not logged in" do
 
+    before { visit "/" }
+
     scenario "can log in" do
-      visit "/"
       fill_in "user_email", with: user.email
       fill_in "user_password", with: user.password
       click_button "Log in"
@@ -15,7 +16,6 @@ feature "User" do
     end
 
     scenario "cannot see a cohort" do
-      visit "/"
       expect(page).not_to have_selector("input[type=submit][value='My Cohort']")
     end
 
@@ -23,15 +23,13 @@ feature "User" do
 
   context "logged in" do
 
-    before { login_as(user, :scope => :user) }
+    before { login_as(user, :scope => :user); visit "/" }
 
     scenario "can sign out" do
-      visit "/"
       expect(page).to have_selector("input[type=submit][value='Sign out']")
     end
 
     scenario "can see their cohort" do
-      visit "/"
       expect(page).to have_selector("input[type=submit][value='My Cohort']")
     end
 
