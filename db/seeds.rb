@@ -6,16 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-def add_user name
-  user = User.new
-  user.username = name
-  user.email = name.downcase.tr(' ', '_') + '@example.com'
-  user.password = 'valid_password'
-  user.password_confirmation = 'valid_password'
-  user.cohort = 'june2015'
-  user.save!
-end
-
 names = [
          'Natalia Antonova',
          'Alex Nasr',
@@ -41,4 +31,55 @@ names = [
          'Zeina Dajani'
        ]
 
-names.each { |name| add_user(name) }
+def add_user cohort, name
+  params = {username: name,
+            email: name.downcase.tr(' ', '_') + '@example.com',
+            password: 'password',
+            password_confirmation: 'password'}
+  cohort.users.create(params)
+end
+
+def pair_up users
+
+  if users.length.odd?
+    users.unshift('x')
+  end
+
+  list_of_pairs = []
+  numTimes = users.length - 1
+
+  numTimes.times do
+    list_of_pairs << create_day_pairings(users)
+    rotate_all_but_first_user_in users
+  end
+
+  list_of_pairs
+end
+
+
+def create_day_pairings users
+  first_arr = users[0..(users.length/2 - 1)]
+  second_arr = users[users.length/2..-1].reverse
+  first_arr.zip(second_arr)
+end
+
+def rotate_all_but_first_user_in users
+  first_user = users.shift
+  users.rotate!(-1)
+  users.unshift(first_user)
+end
+
+june = Cohort.create(name: 'june2015', start_date: Date.new(2015,8,3))
+names.each { |name| add_user(june, name) }
+
+all_ids = User.all.map { |user| user.id }
+start = june.start_date
+round_robin = pair_up(all_ids)
+
+round_robin.each do |day|
+  day.each do |pair|
+    Pairing.create({day: start, user_id: pair[0], pair_id: pair[1]})
+    Pairing.create({day: start, user_id: pair[1], pair_id: pair[0]})
+  end
+  start += 1
+end
