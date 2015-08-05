@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require bootstrap/dist/css/bootstrap
+ *= require jquery-ui
  */
 
 .navbar.navbar-default.navbar-fixed-top {
