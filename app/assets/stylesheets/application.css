@@ -22,14 +22,22 @@
 .field.user-login {
   padding-top: 1em;
   width: 100%;
-
 }
 
 .notice {
-  padding-top: 5em;
+  padding-top: 6em;
 }
 
 .btn.my-cohort {
   float: right;
-
 }
+
+form.ng-valid {
+  height: 0.001em;
+}
+
+.container-fluid {
+  padding-top: 0.5em;
+  padding-bottom: 0.7em;
+}
+
