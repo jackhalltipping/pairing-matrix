@@ -10,3 +10,4 @@ Rails.application.config.assets.precompile += %w( pairs-index.css )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( cohorts.js )

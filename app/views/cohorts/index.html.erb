@@ -1,6 +1,29 @@
-<h1> Here is everyone in your cohort</h1>
-<ul>
-  <% @user_cohort.each do |user| %>
-    <li><%= user.username %></li>
-  <% end %>
-</ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cohort</title>
+  </head>
+  <body>
+    <h1> Here is everyone in your cohort</h1>
+
+    <div class="ui-widget ui-helper-clearfix">
+      <ul id="cohort_gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+        <% @user_cohort.each do |user| %>
+          <li class="ui-widget-content ui-corner-tr">
+                <h5><%= user.username %></h5>
+                <%= image_tag("pairing_matrix_logo.gif", size: "50") %>
+                <a href="#" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
+                <p>User Email</p>
+                <p>User Github</p>
+                <a href="#"title="Delete this image" class="ui-icon ui-icon-trash">Blacklist</a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div id="blacklist" class="ui-widget-content ui-state-default">
+      <h4 class="ui-widget-header"><span class="ui-icon ui-icon-trash">Trash</span> Blacklist</h4>
+    </div>
+  </body>
+</html>
