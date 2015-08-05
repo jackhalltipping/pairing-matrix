@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Index' do
+feature 'Pairing' do
 
-  let!(:user) { FactoryGirl.create(:user)}
+  let!(:user) { create(:user)}
 
   context 'user is not logged in' do
     scenario 'user cannot see pairing buttons' do
@@ -15,10 +15,8 @@ feature 'Index' do
 
   context 'user is logged in' do
     scenario 'user can see pairing buttons' do
+      login_as(user, :scope => :user)
       visit '/'
-      fill_in "user_email", with: user.email
-      fill_in "user_password", with: user.password
-      click_button "Log in"
       expect(page).to have_content('today?')
       expect(page).to have_content('tomorrow?')
       expect(page).to have_content('this week?')
