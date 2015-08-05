@@ -12,7 +12,6 @@ FactoryGirl.define do
     username { generate(:username) }
     email { generate(:email) }
     password 'secret1234'
-    cohort ''
   end
 
   factory :confirmed_user, :parent => :user do
