@@ -3,6 +3,7 @@
 <head>
   <title>Pairing Matrix</title>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <%= stylesheet_link_tag "pairs-index" %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></script>
@@ -11,12 +12,14 @@
 <body>
   <div class="container">
     <div>LOGO</div>
+    <% if current_user %>
     <p>Who am I paired with...</p>
     <div class="button-group">
       <button type="button" class="btn btn-primary">today?</button>
       <button type="button" class="btn btn-primary">tomorrow?</button>
       <button type="button" class="btn btn-primary">this week?</button>
     </div>
+  <% end %>
   </div>
 </body>
 </html>

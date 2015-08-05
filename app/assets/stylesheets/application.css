@@ -14,3 +14,30 @@
  *= require_self
  *= require bootstrap/dist/css/bootstrap
  */
+
+.navbar.navbar-default.navbar-fixed-top {
+  background-color: rgba(195, 202, 207, 0.85);
+}
+
+.field.user-login {
+  padding-top: 1em;
+  width: 100%;
+}
+
+.notice {
+  padding-top: 6em;
+}
+
+.btn.my-cohort {
+  float: right;
+}
+
+form.ng-valid {
+  height: 0.001em;
+}
+
+.container-fluid {
+  padding-top: 0.5em;
+  padding-bottom: 0.7em;
+}
+
