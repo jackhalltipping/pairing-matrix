@@ -11,24 +11,26 @@
       <div class="row">
         <% @user_cohort.each do |user| %>
           <!-- <li class="ui-widget-content ui-corner-tr user-card"> -->
-            <ul class="list-group col-md-2">
-              <li class="list-group-item">
-                  <%= image_tag("pairing_matrix_logo.gif", size: "50") %>
-                  <a href='#'><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>
-              </li>
+            <ul class="list-group col-md-2 user-card">
+              <div class="individual-card">
+                <li class="list-group-item">
+                    <%= image_tag("pairing_matrix_logo.gif", size: "50") %>
+                    <a href='#'><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>
+                </li>
 
-              <li class="list-group-item">
-                <div class="list-group">
-                  <h4 class="list-group-item-heading"><%= user.username %></h4>
-                  <p class="list-group-item-text">User Email</p>
-                  <p class="list-group-item-text">User Github</p>
-                </div>
-              </li>
+                <li class="list-group-item">
+                  <div class="list-group">
+                    <h4 class="list-group-item-heading"><%= user.username %></h4>
+                    <p class="list-group-item-text"><%= user.email %></p>
+                    <p class="list-group-item-text">User Github</p>
+                  </div>
+                </li>
 
-              <li class="list-group-item">
-                <a class="paired-button" href='#'><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></a>
-                <a class="blacklist-button" href='#'><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></a>
-              </li>
+                <li class="list-group-item">
+                  <a class="paired-button" href='#'><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></a>
+                  <a class="blacklist-button" href='#'><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></a>
+                </li>
+              </div>
             </ul>
           </li>
           <!-- funcitonality of glyphcons to be added -->
