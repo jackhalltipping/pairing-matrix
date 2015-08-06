@@ -5,7 +5,7 @@
     <title>Cohort</title>
   </head>
   <body>
-    <h1> Here is everyone in your cohort</h1>
+    <h1 class="cohort-title"> My Cohort</h1>
 
     <div class="container">
       <div class="row">
@@ -21,7 +21,7 @@
                 <li class="list-group-item">
                   <div class="list-group">
                     <h4 class="list-group-item-heading"><%= user.username %></h4>
-                    <p class="list-group-item-text"><%= user.email %></p>
+                    <span style="white-space: nowrap;"><p class="list-group-item-text"><%= user.email %></p></span>
                     <p class="list-group-item-text">User Github</p>
                   </div>
                 </li>
@@ -41,8 +41,15 @@
       </div>
     </div>
 
-    <div id="blacklist" class="ui-widget-content ui-state-default">
-      <h4 class="ui-widget-header"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> Blacklist</h4>
+    <div class="blacklist">
+      <h4 class="blacklist-header"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> Blacklist</h4>
+      <div class="container">
+        <div class="row">
+          <ul class="list-group col-md-2 blacklist-card">
+            
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>

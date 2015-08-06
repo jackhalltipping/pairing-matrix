@@ -1,11 +1,10 @@
 $(document).ready(function() {
-  console.log("cohorts file");
   // cohort gallery and blacklist boxes
-  var $cohort_gallery = $( "#cohort_gallery" ),
-    $blacklist = $( "#blacklist" );
+  var $usercard = $( ".user-card" ),
+    $blacklist = $( ".blacklist" );
 
   // let the users be draggable
-  $( "li", $cohort_gallery ).draggable({
+  $( ".individual-card", $usercard ).draggable({
     cancel: "a.ui-icon", // clicking an icon won't initiate dragging
     revert: "invalid", // when not dropped, the item will revert back to its initial position
     containment: "document",
@@ -15,7 +14,6 @@ $(document).ready(function() {
 
   // let the blacklist be droppable, accepting the users
   $blacklist.droppable({
-    accept: "#cohort_gallery > li",
     activeClass: "ui-state-highlight",
     drop: function( event, ui ) {
       blacklistUser( ui.draggable );
@@ -23,8 +21,7 @@ $(document).ready(function() {
   });
 
   // let the gallery be droppable as well, accepting users from the blacklist
-  $cohort_gallery.droppable({
-    accept: "#blacklist li",
+  $usercard.droppable({
     activeClass: "custom-state-active",
     drop: function( event, ui ) {
       unmarkUser( ui.draggable );
@@ -50,20 +47,15 @@ $(document).ready(function() {
   });
 
   // user blacklist function
-  var recycle_icon = "<a href='#' title='Recycle this image' class='ui-icon ui-icon-refresh'>Recycle image</a>";
+  var recycle_icon = "<a href='' title='Unmark user' class='glyphicon glyphicon-refresh'>Unmark User</a>";
   function blacklistUser( $item ) {
     $item.fadeOut(function() {
       var $list = $( "ul", $blacklist ).length ?
         $( "ul", $blacklist ) :
-        $( "<ul class='cohort_gallery ui-helper-reset'/>" ).appendTo( $blacklist );
+        $( "<ul class='user-card ui-helper-reset'/>" ).appendTo( $blacklist );
 
       $item.find( "a.ui-icon-trash" ).remove();
-      $item.append( recycle_icon ).appendTo( $list ).fadeIn(function() {
-        $item
-          .animate({ width: "48px" })
-          .find( "img" )
-            .animate({ height: "36px" });
-      });
+      $item.append( recycle_icon ).appendTo( $list ).fadeIn();
     });
   }
 
@@ -77,8 +69,7 @@ $(document).ready(function() {
         .end()
         .css( "width", "96px")
         .append( trash_icon )
-        .find( "img" )
-          .css( "height", "72px" )
+
         .end()
         .appendTo( $cohort_gallery )
         .fadeIn();
