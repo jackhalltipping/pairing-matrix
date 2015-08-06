@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // cohort gallery and blacklist boxes
-  var $usercard = $( ".user-card" ),
+  var $usercard = $( ".user-container" ),
     $blacklist = $( ".blacklist" );
 
   // let the users be draggable
@@ -14,15 +14,17 @@ $(document).ready(function() {
 
   // let the blacklist be droppable, accepting the users
   $blacklist.droppable({
+    accept: ".individual-card",
     activeClass: "ui-state-highlight",
     drop: function( event, ui ) {
       blacklistUser( ui.draggable );
     }
   });
 
-  // let the gallery be droppable as well, accepting users from the blacklist
+  // let the user container be droppable as well, accepting users from the blacklist
   $usercard.droppable({
-    activeClass: "custom-state-active",
+    accept: ".individual-card",
+    activeClass: "ui-state-highlight",
     drop: function( event, ui ) {
       unmarkUser( ui.draggable );
     }
@@ -46,11 +48,16 @@ $(document).ready(function() {
     $(this).siblings('.blacklist-selected').show();
   });
 
+  //Hiding and opening the blacklist
+  $('.blacklist-dropdown').click(function(){
+    $('.blacklist-card').show();
+  });
+
   // user blacklist function
   var recycle_icon = "<a href='' title='Unmark user' class='refresh-button glyphicon glyphicon-refresh'></a>";
   function blacklistUser( $item ) {
     $item.fadeOut(function() {
-      var $list = $( "ul", $blacklist ).length ?
+      var $list = $( ".individual-card", $blacklist ).length ?
         $( "ul", $blacklist ) :
         $( "<ul class='user-card ui-helper-reset'/>" ).appendTo( $blacklist );
 
@@ -61,18 +68,18 @@ $(document).ready(function() {
   }
 
   // unmarking user function
-  var trash_icon = "<a href='#' title='Delete this image' class='ui-icon ui-icon-trash'>Delete image</a>";
+  var blacklist_icon = "<a class='blacklist-button'><span class='glyphicon glyphicon-minus-sign' aria-hidden='true'></span></a>";
   function unmarkUser( $item ) {
     $item.fadeOut(function() {
+      var $usercard = $("ul", $usercard);
       $item
-        .find( "a.ui-icon-refresh" )
+        .find( "a.refresh-button" )
           .remove()
         .end()
-        .css( "width", "96px")
-        .append( trash_icon )
-
+        .find(".user-buttons")
+          .append( blacklist_icon )
         .end()
-        .appendTo( $cohort_gallery )
+        .appendTo( $usercard )
         .fadeIn();
     });
   }
