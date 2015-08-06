@@ -35,15 +35,15 @@ $(document).ready(function() {
   // when paired selected
   $('.paired-button').click(function(){
     $(this).parents('div.individual-card').toggleClass('has-paired');
-    $('.blacklist-selected').hide();
-    $('.paired-selected').show();
+    $(this).siblings('.blacklist-selected').hide();
+    $(this).siblings('.paired-selected').show();
   });
 
   //when blacklist button selected
   $('.blacklist-button').click(function(){
     $(this).parents('div.individual-card').toggleClass('has-paired');
-    $('.paired-selected').hide();
-    $('.blacklist-selected').show();
+    $(this).siblings('.paired-selected').hide();
+    $(this).siblings('.blacklist-selected').show();
   });
 
   // user blacklist function
