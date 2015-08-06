@@ -8,5 +8,10 @@ class PairsController < ApplicationController
 
   def all
     @pairs = Pairing.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @pairs }
+    end
   end
 end
