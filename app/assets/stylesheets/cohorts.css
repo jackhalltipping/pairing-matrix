@@ -4,10 +4,10 @@
   min-height: 20em;
 }
 
-
 .gallery.custom-state-active {
   background: #eee;
 }
+
 .gallery li {
   float: left;
   width: 8em;
@@ -34,6 +34,18 @@
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
+li.has-paired {
+  background-color: #85e077;
+  opacity: 0.8;
+}
+
+.glyphicon-fullscreen {
+  color: black;
+  float:right;
+}
+
+
+
 #blacklist {
   float: bottom;
   width: 100%;
@@ -44,6 +56,7 @@
 #blacklist h4 {
   line-height: 16px;
   margin: 0 0 0.4em;
+
 }
 #blacklist h4 .ui-icon {
   float: left;

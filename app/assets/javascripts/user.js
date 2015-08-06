@@ -31,6 +31,11 @@ $(document).ready(function() {
     }
   });
 
+  //changing colour when paired selected
+  $('.paired-button').click(function(){
+    $(this).parents('.user-card').toggleClass('has-paired');
+  });
+
   // user blacklist function
   var recycle_icon = "<a href='#' title='Recycle this image' class='ui-icon ui-icon-refresh'>Recycle image</a>";
   function blacklistUser( $item ) {
@@ -49,7 +54,7 @@ $(document).ready(function() {
     });
   }
 
-  // image recycle function
+  // unmarking user function
   var trash_icon = "<a href='#' title='Delete this image' class='ui-icon ui-icon-trash'>Delete image</a>";
   function unmarkUser( $item ) {
     $item.fadeOut(function() {
