@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Pairing Matrix</title>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <%= stylesheet_link_tag "show" %>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></script>
-
 </head>
+
 <body>
   <div id="today" class="container">
     <div class="col-xs-6 pull-center">
       <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
       <br>
-      <span class='names'>user</span>
+      <span class='names'><%= @user.username %></span>
     </div>
     <div class="col-xs-6 pull-center">
       <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
       <br>
-      <span class='names'>pair partner</span>
+      <span class='names'><%= @today_pair.username %></span>
     </div>
-    <p class='col-xs-12 text pull-center'>Today you're paired with X</p>
+    <p class='col-xs-12 text pull-center'>Today you're paired with <%= @today_pair.username %></p>
   </div>
 
   <div id="tomorrow" class="container">
     <div class="col-xs-6 pull-center">
       <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
       <br>
-      <span class='names'>user</span>
+      <span class='names'><%= @user.username %></span>
     </div>
     <div class="col-xs-6 pull-center">
       <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
       <br>
-      <span class='names'>pair partner</span>
+      <span class='names'><%= @tomorrow_pair.username %></span>
     </div>
-    <p class='col-xs-12 text pull-center'>Tomorrow you're paired with X</p>
+    <p class='col-xs-12 text pull-center'>Tomorrow you're paired with <%= @tomorrow_pair.username %></p>
   </div>
 
   <div id="this-week" class="container">
     <div class="col-sm-5 pull-center dropped">
       <%= image_tag("balsamiq-smile.png", size: '200', :class => 'center-image')%>
       <br>
-      <span class='names'>user</span>
+      <span class='names'><%= @user.username %></span>
     </div>
     <div class="col-sm-7 pull-center">
       <span class='text'>Your pairs for this week are:</span>
       <br>
       <div class='pair-list'>
-        <p class='names'>Monday: X</p>
-        <p class='names'>Tuesday: Y</p>
-        <p class='names'>Wednesday: Z</p>
-        <p class='names'>Thursday: ?</p>
-        <p class='names'>Friday: $</p>
+        <p class='names'>Monday: <%= @weeks_pairs[0].username %> </p>
+        <p class='names'>Tuesday: <%= @weeks_pairs[1].username %></p>
+        <p class='names'>Wednesday: <%= @weeks_pairs[2].username %></p>
+        <p class='names'>Thursday: <%= @weeks_pairs[3].username %></p>
+        <p class='names'>Friday: <%= @weeks_pairs[4].username %></p>
       </div>
     </div>
+  </div>
+  <div class="button-group">
+    <a id="today-btn" class="btn btn-primary">today?</a>
+    <a id="tomorrow-btn" class="btn btn-primary">tomorrow?</a>
+    <a id="week-btn" class="btn btn-primary">this week?</a>
   </div>
 
 </body>
