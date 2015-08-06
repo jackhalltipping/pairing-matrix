@@ -1,8 +1,38 @@
 # pairing-matrix
 
+## Getting Started
+
+The database is seeded with my Makers cohort. Pairs are created using the Round Robin algorithm. To log in your email address is ``<first_name_lower_case>_<last_name_lowercase>@example.com` and the password is `password`
+
+```bash
+git clone https://github.com/jackhalltipping/pairing-matrix.git
+cd pairing-matrix
+bundle install
+npm install
+bower install
+bin/rake db:create
+bin/rake db:migrate
+bin/rake db:seed
+rails s
+```
+
+Go to http://localhost:3000
+
+## Running Tests
+
+```bash
+rspec
+```
+
+## Kanban
+
 Waffle Board: https://waffle.io/jackhalltipping/pairing-matrix
 
-# Higgs bosons
+## Heroku
+
+https://dj-jankc.herokuapp.com
+
+## Higgs bosons
 * In order to push to heroku, I had to run `rake assets:precompile` from the terminal. That let the rails pipeline know about angular and some other dependencies. The specific error that heroku threw when I tried to push the first time was `deploying to heroku asset pipeline Sprockets::fileNotFound`. Googled that and found this page `http://stackoverflow.com/questions/13077564/deploying-to-heroku-asset-pipeline-sprocketsfilenotfound`. `rake assetes:precompile` added some files to `public/assets`.
 * In order to get bower to work with Rails (to configure angular), we had to follow this guide: http://dotwell.io/taking-advantage-of-bower-in-your-rails-4-app/
 
@@ -48,4 +78,5 @@ So that I never have to listen to them speak
 
 ### Testing:
 * Rspec
+* FactoryGirl
 * Protractor
