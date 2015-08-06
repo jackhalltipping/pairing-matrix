@@ -4,7 +4,6 @@ $(document).ready(function () {
 
 
   $('#today-btn').click(function () {
-    console.log('hello');
     $('#today').show();
     $('#tomorrow').hide();
     $('#this-week').hide();
