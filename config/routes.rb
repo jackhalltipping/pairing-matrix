@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/user/cohorts' => 'cohorts#index'
+  get '/pairs/all' => 'pairs#all'
 
   root to: 'pairs#index'
 

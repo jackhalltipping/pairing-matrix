@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WOOT</title>
+  </head>
+  <body>
+    <% n = 1 %>
+    <% @pairs.each do |pair| %>
+    <% if n.odd? %>
+      <%= pair.day %>
+      <%= User.find(pair.user_id).username %>
+      <%= User.find(pair.pair_id).username %>
+      </br>
+      <% end %>
+      <% n += 1 %>
+    <% end %>
+
+  </body>
+</html>

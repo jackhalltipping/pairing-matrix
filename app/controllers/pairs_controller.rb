@@ -6,4 +6,7 @@ class PairsController < ApplicationController
   def show
   end
 
+  def all
+    @pairs = Pairing.all
+  end
 end
