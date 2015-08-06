@@ -1,11 +1,23 @@
-.inline-image {
-  display: inline;
+.container {
+  padding-top: 3em;
 }
 
-body {
-
+.pull-center {
+  text-align: center;
 }
 
-p {
+.image {
+  padding-bottom: 1em;
+}
 
+.names {
+  font-family: Helvetica;
+  font-size: 1.5em;
+}
+
+.text {
+  font-family: Helvetica;
+  font-size: 2.5em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
