@@ -7,9 +7,7 @@ feature 'Pairing' do
   context 'user is not logged in' do
     scenario 'user cannot see pairing buttons' do
       visit '/'
-      expect(page).not_to have_content('today?')
-      expect(page).not_to have_content('tomorrow?')
-      expect(page).not_to have_content('this week?')
+      expect(page).not_to have_content('See my pairs')
     end
   end
 
@@ -17,9 +15,7 @@ feature 'Pairing' do
     scenario 'user can see pairing buttons' do
       login_as(user, :scope => :user)
       visit '/'
-      expect(page).to have_content('today?')
-      expect(page).to have_content('tomorrow?')
-      expect(page).to have_content('this week?')
+      expect(page).to have_content('See my pairs')
     end
   end
 
