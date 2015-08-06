@@ -19,7 +19,7 @@
       <br>
       <span class='names'><%= @today_pair.username %></span>
     </div>
-    <p class='col-xs-12 text pull-center'>Today you're paired with X</p>
+    <p class='col-xs-12 text pull-center'>Today you're paired with <%= @today_pair.username %></p>
   </div>
 
   <div id="tomorrow" class="container">
@@ -33,7 +33,7 @@
       <br>
       <span class='names'><%= @tomorrow_pair.username %></span>
     </div>
-    <p class='col-xs-12 text pull-center'>Tomorrow you're paired with X</p>
+    <p class='col-xs-12 text pull-center'>Tomorrow you're paired with <%= @tomorrow_pair.username %></p>
   </div>
 
   <div id="this-week" class="container">
