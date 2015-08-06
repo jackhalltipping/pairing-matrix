@@ -10,9 +10,17 @@
 </head>
 <body>
   <div class="container">
-    <div class="inline-image">user</div>
-    <div class="inline-image">pair partner</div>
-    <p>Today you're paired with X</p>
+    <div class="col-xs-6 pull-center">
+      <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
+      <br>
+      <span class='names'>user</span>
+    </div>
+    <div class="col-xs-6 pull-center">
+      <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
+      <br>
+      <span class='names'>pair partner</span>
+    </div>
+    <p class='col-xs-12 text pull-center'>Today you're paired with X</p>
   </div>
 </body>
 </html>
