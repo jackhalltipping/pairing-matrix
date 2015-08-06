@@ -9,7 +9,7 @@
 
 </head>
 <body>
-  <div class="container">
+  <div id="today" class="container">
     <div class="col-xs-6 pull-center">
       <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
       <br>
@@ -22,5 +22,39 @@
     </div>
     <p class='col-xs-12 text pull-center'>Today you're paired with X</p>
   </div>
+
+  <div id="tomorrow" class="container">
+    <div class="col-xs-6 pull-center">
+      <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
+      <br>
+      <span class='names'>user</span>
+    </div>
+    <div class="col-xs-6 pull-center">
+      <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
+      <br>
+      <span class='names'>pair partner</span>
+    </div>
+    <p class='col-xs-12 text pull-center'>Tomorrow you're paired with X</p>
+  </div>
+
+  <div id="this-week" class="container">
+    <div class="col-sm-5 pull-center dropped">
+      <%= image_tag("balsamiq-smile.png", size: '200', :class => 'center-image')%>
+      <br>
+      <span class='names'>user</span>
+    </div>
+    <div class="col-sm-7 pull-center">
+      <span class='text'>Your pairs for this week are:</span>
+      <br>
+      <div class='pair-list'>
+        <p class='names'>Monday: X</p>
+        <p class='names'>Tuesday: Y</p>
+        <p class='names'>Wednesday: Z</p>
+        <p class='names'>Thursday: ?</p>
+        <p class='names'>Friday: $</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
