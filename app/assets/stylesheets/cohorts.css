@@ -83,6 +83,10 @@
   opacity: 0.5;
 }
 
+.refresh-button {
+  float: right;
+}
+
 .user-buttons {
   text-align: center;
 }

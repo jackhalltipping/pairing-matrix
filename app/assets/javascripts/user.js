@@ -47,15 +47,16 @@ $(document).ready(function() {
   });
 
   // user blacklist function
-  var recycle_icon = "<a href='' title='Unmark user' class='glyphicon glyphicon-refresh'>Unmark User</a>";
+  var recycle_icon = "<a href='' title='Unmark user' class='refresh-button glyphicon glyphicon-refresh'></a>";
   function blacklistUser( $item ) {
     $item.fadeOut(function() {
       var $list = $( "ul", $blacklist ).length ?
         $( "ul", $blacklist ) :
         $( "<ul class='user-card ui-helper-reset'/>" ).appendTo( $blacklist );
 
-      $item.find( "a.ui-icon-trash" ).remove();
-      $item.append( recycle_icon ).appendTo( $list ).fadeIn();
+      $item.find( "a.blacklist-button" ).remove();
+      $item.find(".user-buttons").append( recycle_icon );
+      $item.appendTo( $list ).fadeIn();
     });
   }
 
