@@ -1,21 +1,24 @@
-// $(document).ready(function () {
-//             $('#today').hide()
-//             $('#tomorrow').hide()
-//             $('#this-week').hide()
-// });
+$(document).ready(function () {
+            $('#tomorrow').hide();
+            $('#this-week').hide();
 
-// // $('#today-btn').click(function () {
-// //   console.log('hello')
-// //   // $('#tomorrow').hide()
-// //   // $('#this-week').hide()
-// // });
 
-// // $('#tomorrow-btn').click(function (event) {
-// //   $('#tomorrow').show()
-// //   event.preventDefault();
-// // });
+  $('#today-btn').click(function () {
+    console.log('hello');
+    $('#today').show();
+    $('#tomorrow').hide();
+    $('#this-week').hide();
+  });
 
-// // $('#week-btn').click(function (event) {
-// //   $('#this-week').show()
-// //   event.preventDefault();
-// // });
+  $('#tomorrow-btn').click(function () {
+    $('#tomorrow').show();
+    $('#today').hide();
+    $('#this-week').hide();
+  });
+
+  $('#week-btn').click(function () {
+    $('#this-week').show();
+    $('#today').hide();
+    $('#tomorrow').hide();
+  });
+});
