@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150805141146) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.text     "username"
+    t.text     "github"
     t.integer  "cohort_id"
   end
 
