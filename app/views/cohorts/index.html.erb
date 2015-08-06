@@ -15,7 +15,7 @@
               <div class="individual-card">
                 <li class="list-group-item">
                     <%= image_tag("pairing_matrix_logo.gif", size: "50") %>
-                    <a href='#'><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>
+                    <a class="fullscreen-button"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>
                 </li>
 
                 <li class="list-group-item">
@@ -26,9 +26,12 @@
                   </div>
                 </li>
 
-                <li class="list-group-item">
-                  <a class="paired-button" href='#'><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></a>
-                  <a class="blacklist-button" href='#'><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></a>
+                <li class="list-group-item user-buttons">
+                  <a class="paired-button"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></a>
+                    <span class="paired-selected">Paired</span>
+                    <span class="blacklist-selected">Blacklisted</span>
+                  <a class="blacklist-button"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></a>
+
                 </li>
               </div>
             </ul>

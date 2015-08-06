@@ -31,9 +31,22 @@ $(document).ready(function() {
     }
   });
 
-  //changing colour when paired selected
+
+  $('.blacklist-selected').hide();
+  $('.paired-selected').hide();
+
+  // when paired selected
   $('.paired-button').click(function(){
-    $(this).parents('.user-card').toggleClass('has-paired');
+    $(this).parents('div.individual-card').toggleClass('has-paired');
+    $('.blacklist-selected').hide();
+    $('.paired-selected').show();
+  });
+
+  //when blacklist button selected
+  $('.blacklist-button').click(function(){
+    $(this).parents('div.individual-card').toggleClass('has-paired');
+    $('.paired-selected').hide();
+    $('.blacklist-selected').show();
   });
 
   // user blacklist function

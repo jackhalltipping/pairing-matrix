@@ -39,23 +39,51 @@
 	-moz-border-radius: 2em;
 }
 
-li.has-paired {
-  background-color: #85e077;
-  opacity: 0.8;
+.has-paired {
+  background-color: green;
+  opacity: 0.5;
+}
+
+.blacklist-selected, .paired-selected {
+  color: white;
+}
+
+.has-paired .blacklist-selected {
+  color: black;
+}
+
+.has-paired .paired-selected {
+  color: black;
 }
 
 .user-card li {
   overflow: scroll;
 }
 
-.glyphicon-fullscreen {
-  color: black;
+.fullscreen-button {
+  color: blue;
   float:right;
+  opacity: 0.5;
+}
+
+
+.paired-button {
+  float: left;
+  color: green;
+  opacity: 0.5;
 }
 
 .blacklist-button {
   float: right;
+  color: red;
+  opacity: 0.5;
 }
+
+.user-buttons {
+  text-align: center;
+}
+
+
 
 
 #blacklist {
