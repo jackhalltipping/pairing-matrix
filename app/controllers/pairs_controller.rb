@@ -17,10 +17,15 @@ class PairsController < ApplicationController
   def get_pair id,date
     pair_id = Pairing.where(day: date, user_id: id)[0].pair_id
     pair = User.find(pair_id)
+    byebug
   end
 
   def all
-    @pairs = Pairing.all
+    @pairs = Pairing.all.select { |i| i.id.odd? }.map { |pair| {
+                        day: pair.day,
+                        user_name: User.find(pair.user_id).username,
+                        pair_name: User.find(pair.pair_id).username,
+                        paired_with: pair.paired_with} }
 
     respond_to do |format|
       format.html # index.html.erb
