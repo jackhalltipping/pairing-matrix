@@ -23,7 +23,6 @@ class PairsController < ApplicationController
   def get_pair id,date
     pair_id = Pairing.where(day: date, user_id: id)[0].pair_id
     pair = User.find(pair_id)
-    byebug
   end
 
   def all
