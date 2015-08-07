@@ -35,5 +35,7 @@
 }
 
 .button-group {
+  position: fixed;
+  bottom: 5px;
   margin-left: 40%;
 }
