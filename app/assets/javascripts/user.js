@@ -86,12 +86,14 @@ $(document).ready(function() {
 //expanding image
 $('.fullscreen-button').hover(function(){
   $(this).siblings('img')
-    .height(function(i,h){return h * 2.6})
-    .width(function(i,w){return w * 2.6});
+    .height(function(i,h){return h * 2.45})
+    .width(function(i,w){return w * 2.45});
+    $(this).parents('.user-image').siblings('.user-details').hide();
     },
     function() {$(this).siblings('img')
-      .height(function(i,h){return h / 2.6})
-      .width(function(i,w){return w / 2.6});
+      .height(function(i,h){return h / 2.45})
+      .width(function(i,w){return w / 2.45});
+      $(this).parents('.user-image').siblings('.user-details').show();
 });
 
   // resolve the icons behavior with event delegation
