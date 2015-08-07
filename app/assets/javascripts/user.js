@@ -83,13 +83,16 @@ $(document).ready(function() {
         .fadeIn();
     });
   }
-//fullscreen
-// $('.fullscreen-button').hover(function(){
-//   $(this).siblings('img').animate({
-//     height: '30em',
-//     width: '20em'
-//   },'fast');
-// });
+//expanding image
+$('.fullscreen-button').hover(function(){
+  $(this).siblings('img')
+    .height(function(i,h){return h * 2.6})
+    .width(function(i,w){return w * 2.6});
+    },
+    function() {$(this).siblings('img')
+      .height(function(i,h){return h / 2.6})
+      .width(function(i,w){return w / 2.6});
+});
 
   // resolve the icons behavior with event delegation
   $( "ul.individual-card" ).click(function( event ) {
