@@ -29,8 +29,9 @@
   padding-top: 6em;
 }
 
-.btn.my-cohort {
+.btn.my-cohort, .btn.my-pair {
   float: right;
+  padding-right: 1em;
 }
 
 form.ng-valid {
