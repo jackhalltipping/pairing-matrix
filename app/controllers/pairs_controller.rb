@@ -1,6 +1,9 @@
 class PairsController < ApplicationController
 
   def index
+    if current_user
+      redirect_to '/pairs/show'
+    end
   end
 
   def show

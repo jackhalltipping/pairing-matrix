@@ -6,7 +6,10 @@ feature "User" do
 
   context "not logged in" do
 
-    before { visit "/" }
+    before do
+      visit "/"
+      create_pairing_for_the_week(user)
+    end
 
     scenario "can log in" do
       fill_in "user_email", with: user.email
@@ -23,7 +26,11 @@ feature "User" do
 
   context "logged in" do
 
-    before { login_as(user, :scope => :user); visit "/" }
+    before do
+      create_pairing_for_the_week(user)
+      login_as(user, :scope => :user)
+      visit "/"
+    end
 
     scenario "can sign out" do
       expect(page).to have_selector("input[type=submit][value='Sign out']")
@@ -33,6 +40,15 @@ feature "User" do
       expect(page).to have_selector("input[type=submit][value='My Cohort']")
     end
 
+  end
+
+  def create_pairing_for_the_week user
+    today = Date.today
+    days_of_the_week = (today.at_beginning_of_week..today.at_end_of_week).to_a[0..4]
+    days_of_the_week.each do |day|
+      another_user = create(:user)
+      Pairing.create(day: day, user_id: user.id, pair_id: another_user.id)
+    end
   end
 
 end
