@@ -26,6 +26,15 @@ class PairsController < ApplicationController
   end
 
   def all
-    @pairs = Pairing.all
+    @pairs = Pairing.all.select { |i| i.id.odd? }.map { |pair| {
+                        day: pair.day,
+                        user_name: User.find(pair.user_id).username,
+                        pair_name: User.find(pair.pair_id).username,
+                        paired_with: pair.paired_with} }
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @pairs }
+    end
   end
 end
