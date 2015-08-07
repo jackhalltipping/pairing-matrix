@@ -59,7 +59,7 @@ $(document).ready(function() {
     $item.fadeOut(function() {
       var $list = $( ".individual-card", $blacklist ).length ?
         $( "ul", $blacklist ) :
-        $( "<ul class='user-card ui-helper-reset'/>" ).appendTo( $blacklist );
+        $( "<ul class='list-group col-xs-6 cols-sm-4 col-md-2 user-card'/>" ).appendTo( ".blacklist .row" );
 
       $item.find( "a.blacklist-button" ).remove();
       $item.find(".user-buttons").append( recycle_icon );
@@ -83,38 +83,24 @@ $(document).ready(function() {
         .fadeIn();
     });
   }
-
-  // image preview function, demonstrating the ui.dialog used as a modal window
-  function viewLargerImage( $link ) {
-    var src = $link.attr( "href" ),
-      title = $link.siblings( "img" ).attr( "alt" ),
-      $modal = $( "img[src$='" + src + "']" );
-
-    if ( $modal.length ) {
-      $modal.dialog( "open" );
-    } else {
-      var img = $( "<img alt='" + title + "' width='384' height='288' style='display: none; padding: 8px;' />" )
-        .attr( "src", src ).appendTo( "body" );
-      setTimeout(function() {
-        img.dialog({
-          title: title,
-          width: 400,
-          modal: true
-        });
-      }, 1 );
-    }
-  }
+//fullscreen
+// $('.fullscreen-button').hover(function(){
+//   $(this).siblings('img').animate({
+//     height: '30em',
+//     width: '20em'
+//   },'fast');
+// });
 
   // resolve the icons behavior with event delegation
-  $( "ul.cohort_gallery > li" ).click(function( event ) {
+  $( "ul.individual-card" ).click(function( event ) {
     var $item = $( this ),
       $target = $( event.target );
 
-    if ( $target.is( "a.ui-icon-trash" ) ) {
+    if ( $target.is( "a.blacklist-button" ) ) {
       blacklistUser( $item );
-    } else if ( $target.is( "a.ui-icon-zoomin" ) ) {
+    } else if ( $target.is( "a.fullscreen-button" ) ) {
       viewLargerImage( $target );
-    } else if ( $target.is( "a.ui-icon-refresh" ) ) {
+    } else if ( $target.is( "a.refresh-button" ) ) {
       unmarkUser( $item );
     }
 
