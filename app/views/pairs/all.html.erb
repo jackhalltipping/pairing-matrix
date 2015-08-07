@@ -5,15 +5,11 @@
     <title>WOOT</title>
   </head>
   <body>
-    <% n = 1 %>
     <% @pairs.each do |pair| %>
-    <% if n.odd? %>
-      <%= pair.day %>
-      <%= User.find(pair.user_id).username %>
-      <%= User.find(pair.pair_id).username %>
+      <%= pair[:day] %>
+      <%= pair[:user_name] %>
+      <%= pair[:pair_name] %>
       </br>
-      <% end %>
-      <% n += 1 %>
     <% end %>
 
   </body>
