@@ -11,13 +11,14 @@
   <% if @today_pair %>
   <div id="today" class="container">
     <div class="col-xs-6 pull-center">
-      <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
+      <span id='hidden-user' hidden><%= @user.github %></span>
+      <span id='hidden-pair' hidden><%= @today_pair.github %></span>
+      <div class='image github-avatar'></div>
       <br>
       <span class='names'><%= @user.username %></span>
     </div>
     <div class="col-xs-6 pull-center">
-      <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
-      <br>
+      <div class='image pair-avatar'></div><br>
       <span class='names'><%= @today_pair.username %></span>
     </div>
     <p class='col-xs-12 text pull-center'>Today you're paired with <%= @today_pair.username %></p>
@@ -26,14 +27,14 @@
  <% if @tomorrow_pair %>
   <div id="tomorrow" class="container">
     <div class="col-xs-6 pull-center">
-      <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
+      <div class='image github-avatar'></div>
       <br>
       <span class='names'><%= @user.username %></span>
     </div>
     <div class="col-xs-6 pull-center">
-      <%= image_tag("balsamiq-smile.png", size: '200', :class => 'image')%>
+      <span id='hidden-pair' hidden><%= @tomorrow_pair.github %></span>
       <br>
-
+      <div class='image pair-avatar'></div>
       <span class='names'><%= @tomorrow_pair.username %></span>
 
     </div>
@@ -43,7 +44,7 @@
   <% if @weeks_pairs %>
   <div id="this-week" class="container">
     <div class="col-sm-5 pull-center dropped">
-      <%= image_tag("balsamiq-smile.png", size: '200', :class => 'center-image')%>
+      <div class='github-avatar'></div>
       <br>
       <span class='names'><%= @user.username %></span>
     </div>
