@@ -12,7 +12,8 @@ class PairsController < ApplicationController
     today = Date.today
     if today.saturday? || today.sunday?
       flash[:notice] = "It's the weekend! Go out and have some fun"
-      redirect :back
+      render :index
+      return
     end
     tomorrow = Date.tomorrow
     days_of_the_week = (today.at_beginning_of_week..today.at_end_of_week).to_a[0..4]
